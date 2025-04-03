@@ -22,3 +22,12 @@ describe("Tax calculator test for floating point numbers", () => {
     assert.equal(calcTax(16_500.88), 3_300.18);
   });
 });
+
+describe("Tax calculator test for negative numbers", () => {
+  it("should exempt income below 12_000", () => {
+    assert.equal(calcTax(-10_000), 0);
+  });
+  it("should charge exempt negative income", () => {
+    assert.equal(calcTax(-36_000_000), 0);
+  });
+});
