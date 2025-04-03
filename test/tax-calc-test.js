@@ -31,3 +31,12 @@ describe("Tax calculator test for negative numbers", () => {
     assert.equal(calcTax(-36_000_000), 0);
   });
 });
+
+describe("Tax calculator test for non-numeric values", () => {
+  it("should not charge tax for non-numeric values", () => {
+    assert.equal(calcTax("10_000"), 0);
+  });
+  it("should not charge tax for non-numeric values", () => {
+    assert.equal(calcTax(null), 0);
+  });
+});
